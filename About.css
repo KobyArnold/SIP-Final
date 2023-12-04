@@ -1,0 +1,68 @@
+/* Add any additional styles here */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Add margin at the bottom */
+}
+
+#creators {
+    margin-top: 30px;
+}
+
+.creator {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.creator img {
+    max-width: 20%; /* Adjust the width as needed */
+    border-radius: 50%;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative; /* Change to relative positioning */
+    bottom: 0;
+    width: 100%;
+}
