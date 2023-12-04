@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive</title>
+    <link rel="stylesheet" href="interactive.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="TOT.html">Types of Threats</a></li>
+            <li><a href="LN.html">Latest News</a></li>
+            <li><a href="BP.html">Best Practices</a></li>
+            <li><a href="Interactive.html">Interactive</a></li>
+            <li><a href="UF.html">User Forum</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+    <header>
+        <h1>Interactive</h1>
+    </header>
+
+    <section>
+        <div class="practice">
+            <h2>Step 1: Open PowerShell as Administrator</h2>
+            <ol>
+                <li>Click on the "Start" button.</li>
+                <li>Type "PowerShell" in the search bar.</li>
+                <li>Right-click on "Windows PowerShell" or "PowerShell."</li>
+                <li>Choose "Run as administrator."</li>
+            </ol>
+        </div>
+
+        <div class="practice">
+            <h2>Step 2: Copy and Paste Script in PowerShell</h2>
+            <ol>
+                <li>Highlight all of the script.</li>
+                <pre><code>
+function Check-UrlSecurity {
+    param (
+        [string]$url
+    )
+
+    try {
+        $uri = [System.Uri]$url
+
+        if ($uri.Scheme -eq "https") {
+            $request = [System.Net.HttpWebRequest]::Create($url)
+            $response = $request.GetResponse()
+
+            Write-Host "The site is secured (HTTPS)."
+        } elseif ($uri.Scheme -eq "http") {
+            Write-Host "The site is not secured (HTTP)."
+        } else {
+            Write-Host "Invalid URL scheme. Please enter a valid URL starting with 'http://' or 'https://'."
+        }
+    } catch {
+        Write-Host "Error occurred while checking the URL."
+    }
+}
+
+# Prompt the user for a URL
+$url = Read-Host "Enter the URL to check"
+
+# Call the function to check the URL security
+Check-UrlSecurity -url $url
+                </code></pre>
+                <li>Either press ctrl+c or right click and select copy.</li>
+                <li>Once copied, go to PowerShell and then press ctrl+v or right click and select paste.</li>
+            </ol>
+        </div>
+
+        <div class="practice">
+            <h2>Step 3: Run the Script</h2>
+            <ol>
+                <li>Press Enter</li>
+            </ol>
+        </div>
+
+        <div class="practice">
+            <h2>Step 4: Respond to Any Prompts</h2>
+            <p>Upon pressing enter, the script will then state “Enter the URL to check”</p>
+            <p>Example URL- https://website.com</p>
+        </div>
+
+        <div class="practice">
+            <h2>Step 5: See Results</h2>
+            <p>The script will then identify if the URL that was given is secured and provides a trusted certificate.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Mimir. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
